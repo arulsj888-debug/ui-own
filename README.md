@@ -13,6 +13,8 @@ This repository contains modern, high-performance UI designs and creative fronte
 | **`galaxy/`** | **Lunar UI** | React 19, TypeScript, Vite, Tailwind CSS 4, Lenis | [http://localhost:3006](http://localhost:3006) |
 | **`jewelery/`** | **Naiade UI** | React 19, TypeScript, Vite, Tailwind CSS 4, Lenis | [http://localhost:5173](http://localhost:5173) |
 | **`fluxora/`** | **Ember UI** | React 19, Vite, Oxlint | [http://localhost:5173](http://localhost:5173) |
+| **`custom/`** | **Aceternity 3D Cubes & Relay** | React 19, Three.js, Motion, Tailwind CSS 4 | [http://localhost:5174](http://localhost:5174) |
+| **`google-flow/`** | **Google Labs Flow** | Standalone HTML5, CSS3, Google Sans, SVG Animations | Open `index.html` directly or serve |
 
 ---
 
@@ -84,6 +86,35 @@ npm run dev
 ```
 
 Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+### 📦 4. Custom (Aceternity 3D Cubes & Relay Alerting)
+
+```bash
+# Navigate to the custom folder
+cd custom
+
+# Install dependencies
+npm install
+
+# Start development server (runs on port 5174)
+npm run dev
+```
+
+Open [http://localhost:5174](http://localhost:5174) in your browser to experience the real Three.js interactive 3D ripple cubes!
+
+---
+
+### 🌐 5. Google Flow (Google Labs UI)
+
+```bash
+# Option 1: Open directly in your browser
+start google-flow/index.html
+
+# Option 2: Serve via local server
+npx serve google-flow
+```
 
 ---
 
