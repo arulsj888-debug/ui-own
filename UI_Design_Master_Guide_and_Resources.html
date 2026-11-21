@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UI Design Master Guide & Resources</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+    @page {
+      size: A4;
+      margin: 14mm 14mm 16mm 14mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      background: #ffffff;
+      line-height: 1.55;
+      font-size: 13px;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Header styling */
+    .header {
+      background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #31104b 100%);
+      color: #ffffff;
+      padding: 24px;
+      border-radius: 12px;
+      margin-bottom: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .badge-top {
+      display: inline-block;
+      background: rgba(147, 51, 234, 0.3);
+      border: 1px solid rgba(192, 132, 252, 0.4);
+      color: #e9d5ff;
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+    }
+
+    .header h1 {
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    .header p {
+      font-size: 13.5px;
+      color: #cbd5e1;
+      line-height: 1.45;
+      max-width: 95%;
+    }
+
+    .meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 11.5px;
+      color: #94a3b8;
+    }
+
+    .meta-bar span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .meta-bar strong {
+      color: #f1f5f9;
+    }
+
+    .meta-bar a {
+      color: #38bdf8;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* Section Headings */
+    h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-top: 22px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      letter-spacing: -0.01em;
+      page-break-after: avoid;
+    }
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 14px;
+      margin-bottom: 8px;
+      page-break-after: avoid;
+    }
+
+    p {
+      margin-bottom: 10px;
+      color: #334155;
+    }
+
+    /* Tables */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 16px 0;
+      font-size: 12px;
+      page-break-inside: avoid;
+    }
+
+    th, td {
+      padding: 9px 12px;
+      text-align: left;
+      border: 1px solid #e2e8f0;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    tr:nth-child(even) td {
+      background: #fbfcfe;
+    }
+
+    /* Code Blocks */
+    pre {
+      background: #0f172a;
+      color: #f8fafc;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
+      font-size: 11px;
+      line-height: 1.5;
+      overflow-x: auto;
+      margin: 8px 0 12px 0;
+      border: 1px solid #1e293b;
+      page-break-inside: avoid;
+    }
+
+    code {
+      font-family: 'JetBrains Mono', Consolas, Monaco, monospace;
+      background: #f1f5f9;
+      color: #0f172a;
+      padding: 2px 5px;
+      border-radius: 4px;
+      font-size: 11px;
+      border: 1px solid #e2e8f0;
+    }
+
+    pre code {
+      background: transparent;
+      color: inherit;
+      padding: 0;
+      border: none;
+    }
+
+    /* Callouts & Cards */
+    .callout {
+      background: #f0fdf4;
+      border-left: 4px solid #22c55e;
+      padding: 10px 14px;
+      border-radius: 0 8px 8px 0;
+      margin: 12px 0;
+      font-size: 12px;
+      color: #166534;
+      page-break-inside: avoid;
+    }
+
+    .callout.warning {
+      background: #fffbeb;
+      border-left-color: #f59e0b;
+      color: #92400e;
+    }
+
+    .callout.info {
+      background: #f0f9ff;
+      border-left-color: #0284c7;
+      color: #0369a1;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 12px 0 16px 0;
+      page-break-inside: avoid;
+    }
+
+    .card {
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 12px;
+      background: #ffffff;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+      page-break-inside: avoid;
+    }
+
+    .card h4 {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 4px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-tag {
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 12px;
+      background: #e0f2fe;
+      color: #0369a1;
+      text-transform: uppercase;
+    }
+
+    .card p {
+      font-size: 11.5px;
+      color: #475569;
+      margin-bottom: 6px;
+      line-height: 1.4;
+    }
+
+    .card a {
+      font-size: 11px;
+      font-weight: 600;
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .card a:hover {
+      text-decoration: underline;
+    }
+
+    /* Prompt Box */
+    .prompt-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0 16px 0;
+      page-break-inside: avoid;
+    }
+
+    .prompt-title {
+      font-weight: 700;
+      font-size: 12.5px;
+      color: #1e293b;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .prompt-content {
+      font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 10.5px;
+      line-height: 1.5;
+      color: #334155;
+      white-space: pre-wrap;
+      background: #ffffff;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px dashed #cbd5e1;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-size: 10.5px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="badge-top">Complete Project & Resource Handbook</div>
+    <h1>Creative UI Design & Scrollytelling Guide</h1>
+    <p>Comprehensive instructions for running local projects, repository synchronization, free component libraries, AI prompt tools, and copy-paste prompts for Awwwards-style UI designs.</p>
+    <div class="meta-bar">
+      <span><strong>GitHub:</strong> <a href="https://github.com/arulsj888-debug/ui-own.git" target="_blank">https://github.com/arulsj888-debug/ui-own.git</a></span>
+      <span><strong>Branch:</strong> main</span>
+      <span><strong>Workspace:</strong> c:\Users\Arul SJ\Downloads\ui-design</span>
+    </div>
+  </div>
+
+  <!-- Section 1 -->
+  <h2>1. Included Projects Overview</h2>
+  <p>The repository contains three production-grade frontend prototypes built with modern React 19, TypeScript, Vite, and Tailwind CSS:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Directory</th>
+        <th>Project Name</th>
+        <th>Tech Stack & Features</th>
+        <th>Port & URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong><code>galaxy/</code></strong></td>
+        <td>Lunar UI</td>
+        <td>React 19, TypeScript, Vite, Tailwind CSS 4, Lenis smooth scroll, multi-layer celestial parallax, telemetry HUD.</td>
+        <td><code>http://localhost:3006</code></td>
+      </tr>
+      <tr>
+        <td><strong><code>jewelery/</code></strong></td>
+        <td>Naiade UI</td>
+        <td>React 19, TypeScript, Vite, Tailwind CSS 4, Lenis, Apple-style 481-frame WebP canvas scrubber, interactive drawer.</td>
+        <td><code>http://localhost:5173</code></td>
+      </tr>
+      <tr>
+        <td><strong><code>fluxora/</code></strong></td>
+        <td>Ember UI</td>
+        <td>React 19, Vite, Oxlint, cinematic background video loop hero, glassmorphism, iridescent gradient typography.</td>
+        <td><code>http://localhost:5173</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Section 2 -->
+  <h2>2. Quick Start & Execution Commands</h2>
+  <p>Before running, make sure you have installed packages inside the project directories.</p>
+
+  <div class="callout warning">
+    <strong>Windows PowerShell Note:</strong> If PowerShell blocks execution with <code>npm.ps1 cannot be loaded</code>, use <code>npm.cmd</code> instead of <code>npm</code>, or run:
+    <br><code>Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass</code>
+  </div>
+
+  <h3>A. Install Dependencies</h3>
+  <pre><code># For Galaxy (Lunar)
+cd "galaxy"
+npm.cmd install
+
+# For Jewelery (Naiade)
+cd "..\jewelery"
+npm.cmd install
+
+# For Fluxora (Ember)
+cd "..\fluxora"
+npm.cmd install</code></pre>
+
+  <h3>B. Running Each Project Separately</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>Action</th>
+        <th>PowerShell Command</th>
+        <th>Access URL</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Run Galaxy</strong></td>
+        <td><code>cd galaxy; npm.cmd run dev</code></td>
+        <td><a href="http://localhost:3006" target="_blank">http://localhost:3006</a></td>
+      </tr>
+      <tr>
+        <td><strong>Run Jewelery</strong></td>
+        <td><code>cd jewelery; npm.cmd run dev</code></td>
+        <td><a href="http://localhost:5173" target="_blank">http://localhost:5173</a></td>
+      </tr>
+      <tr>
+        <td><strong>Run Fluxora</strong></td>
+        <td><code>cd fluxora; npm.cmd run dev</code></td>
+        <td><a href="http://localhost:5173" target="_blank">http://localhost:5173</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>C. Run Both Galaxy & Jewelery Concurrently</h3>
+  <p>Run this single command from the root directory to spawn two dedicated terminal windows running both servers simultaneously (no port collision):</p>
+  <pre><code>Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd 'galaxy'; npm.cmd run dev"; Start-Process powershell -ArgumentList "-NoExit", "-Command", "cd 'jewelery'; npm.cmd run dev"</code></pre>
+
+  <div class="page-break"></div>
+
+  <!-- Section 3 -->
+  <h2>3. Free Component Libraries & Code Repositories</h2>
+  <p>The following platforms provide ready-to-use, open-source React, Tailwind, and Framer Motion code tailored for luxury, 3D, and high-impact web designs:</p>
+
+  <div class="card-grid">
+    <div class="card">
+      <h4>Aceternity UI <span class="card-tag">Animated Components</span></h4>
+      <p>Cutting-edge animated components (3D card parallax, glowing borders, background beams, and canvas reveals). 100% copy-paste Tailwind + Framer Motion.</p>
+      <a href="https://ui.aceternity.com/" target="_blank">🔗 https://ui.aceternity.com/</a>
+    </div>
+
+    <div class="card">
+      <h4>21st.dev <span class="card-tag">Design Engineer Registry</span></h4>
+      <p>"The npm for Design Engineers". Community-driven repository of hero sections, canvas scroll animations, and interactive controls with live previews.</p>
+      <a href="https://21st.dev/" target="_blank">🔗 https://21st.dev/</a>
+    </div>
+
+    <div class="card">
+      <h4>Magic UI <span class="card-tag">Landing Page UI</span></h4>
+      <p>Free, accessible animated components including interactive retro grids, 3D globes, animated beam borders, and dock menus.</p>
+      <a href="https://magicui.design/" target="_blank">🔗 https://magicui.design/</a>
+    </div>
+
+    <div class="card">
+      <h4>Codrops (Tympanus) <span class="card-tag">Creative Experiments</span></h4>
+      <p>Award-winning creative coding tutorials and open-source GitHub repositories covering WebGL, image sequence scrubbers, and smooth scrolling.</p>
+      <a href="https://tympanus.net/codrops/" target="_blank">🔗 https://tympanus.net/codrops/</a>
+    </div>
+
+    <div class="card">
+      <h4>Hover.dev <span class="card-tag">Framer Motion</span></h4>
+      <p>Interactive buttons, cards, magnetic cursors, and navigation components with playful spring physics and Tailwind styling.</p>
+      <a href="https://hover.dev/" target="_blank">🔗 https://hover.dev/</a>
+    </div>
+
+    <div class="card">
+      <h4>Uiverse.io <span class="card-tag">CSS / Tailwind Hub</span></h4>
+      <p>Over 3,000+ open-source CSS & Tailwind UI elements: futuristic cards, glow loaders, animated switches, and glassmorphic inputs.</p>
+      <a href="https://uiverse.io/" target="_blank">🔗 https://uiverse.io/</a>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <h2>4. AI Prompt-to-Code Platforms & Inspiration</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Tool / Platform</th>
+        <th>Type</th>
+        <th>Direct URL</th>
+        <th>Best Used For</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>v0 by Vercel</strong></td>
+        <td>AI Generator</td>
+        <td><a href="https://v0.dev/" target="_blank">https://v0.dev/</a></td>
+        <td>Generates React, Tailwind, Lucide & Framer Motion code from prompts with one-click copy.</td>
+      </tr>
+      <tr>
+        <td><strong>Bolt.new</strong></td>
+        <td>AI IDE</td>
+        <td><a href="https://bolt.new/" target="_blank">https://bolt.new/</a></td>
+        <td>In-browser full-stack development environment that runs Vite/React apps live from prompts.</td>
+      </tr>
+      <tr>
+        <td><strong>Lovable.dev</strong></td>
+        <td>AI App Builder</td>
+        <td><a href="https://lovable.dev/" target="_blank">https://lovable.dev/</a></td>
+        <td>Turns UI descriptions into production-ready full-stack web applications with GitHub integration.</td>
+      </tr>
+      <tr>
+        <td><strong>Godly.website</strong></td>
+        <td>Inspiration</td>
+        <td><a href="https://godly.website/" target="_blank">https://godly.website/</a></td>
+        <td>Curated collection of top dark mode, 3D, and typography-heavy websites with tech stack breakdown.</td>
+      </tr>
+      <tr>
+        <td><strong>Awwwards</strong></td>
+        <td>Design Awards</td>
+        <td><a href="https://awwwards.com/" target="_blank">https://awwwards.com/</a></td>
+        <td>World-class creative engineering showcases, Site of the Day award winners, and case studies.</td>
+      </tr>
+      <tr>
+        <td><strong>CodePen (ScrollTrigger)</strong></td>
+        <td>Code Sandbox</td>
+        <td><a href="https://codepen.io/tag/scrolltrigger" target="_blank">codepen.io/tag/scrolltrigger</a></td>
+        <td>Search "canvas image sequence scroll" to find open-source Apple AirPods-style frame scrubbers.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="page-break"></div>
+
+  <!-- Section 5 -->
+  <h2>5. Master AI Prompts to Generate These Designs</h2>
+  <p>Copy and paste these tailored prompts into <strong>v0.dev</strong>, <strong>Bolt.new</strong>, <strong>Claude</strong>, or <strong>ChatGPT</strong> to generate designs matching these exact styles:</p>
+
+  <div class="prompt-box">
+    <div class="prompt-title">💎 Prompt 1: Luxury Scrollytelling Canvas Frame Scrubbing (like Jewelery)</div>
+    <div class="prompt-content">Act as an award-winning creative frontend engineer. Build a luxury product showcase in React 19, TypeScript, and Tailwind CSS.
+Key specifications:
+1. Smooth scrolling integration using Lenis (lenis/react).
+2. Canvas-based frame scrubber: Load a sequence of WebP product images and scrub frames synchronized with window scroll progress using requestAnimationFrame.
+3. Luxury aesthetic: Deep black background (#0a0a0a), muted gold/silver borders (border-white/10), refined serif headings paired with clean geometric monospace labels.
+4. Sticky chapter navigation rail on the right side highlighting active section progress.
+5. Interactive sliding cart/bag drawer from the right edge with backdrop blur.
+6. Responsive layout with fallback high-resolution imagery for mobile viewports.</div>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-title">🌌 Prompt 2: Cinematic 3D Parallax & Telemetry HUD (like Galaxy)</div>
+    <div class="prompt-content">Build a cinematic space-exploration landing page in React, Vite, and Tailwind CSS with smooth scrolling.
+Key specifications:
+1. Multi-layered scroll parallax: Deep starry sky background, floating celestial earth/moon layers, and foreground surface terrain that move at different scroll velocity multipliers.
+2. Mission Telemetry HUD: Top navigation bar displaying real-time coordinates, trajectory angle, altitude ticker, and active mission phase badge.
+3. Mission Cards Grid: Glassmorphic cards with glowing border gradients, tilt effect on hover, and mission status tags (LAUNCH, ORBIT, LANDING).
+4. Smooth text reveals using CSS clip-path or Framer Motion transitions as sections scroll into view.
+5. Clean dark typography with subtle cyan/violet accent glows.</div>
+  </div>
+
+  <div class="prompt-box">
+    <div class="prompt-title">🔥 Prompt 3: Dark-Mode AI SaaS Landing Page with Video Hero (like Fluxora)</div>
+    <div class="prompt-content">Design a modern dark-mode AI technology landing page in React + Tailwind CSS.
+Key specifications:
+1. Fullscreen background hero video loop with a dark gradient vignette overlay (top & bottom fade).
+2. Floating glassmorphic pill navbar with backdrop-blur-md, rounded-full border, and subtle white/10 outline.
+3. Hero typography with a vibrant iridescent gradient shimmer text effect (violet-to-cyan).
+4. Glowing primary call-to-action button with animated border beam effect and secondary dark outline button.
+5. Live status announcement pill with an animated pulsing green indicator dot.</div>
+  </div>
+
+  <!-- Section 6 -->
+  <h2>6. Technical Deep-Dive: How Frame Scrubbing Works</h2>
+  <p>The <code>jewelery/</code> project achieves buttery-smooth 60fps frame scrubbing using a lightweight architecture rather than heavy video decoding:</p>
+  <ul>
+    <li><strong>Image Sequence:</strong> 481 individual WebP frames (e.g., <code>c001.webp</code> to <code>c481.webp</code>) are stored in <code>public/frames/</code>. WebP files provide ~80% size savings over PNGs while retaining crisp details.</li>
+    <li><strong>HTML5 Canvas:</strong> Instead of switching <code>&lt;img&gt;</code> DOM tags (which causes flickering), frames are preloaded into memory and drawn directly to an HTML5 <code>&lt;canvas&gt;</code> context.</li>
+    <li><strong>Scroll Interpolation:</strong> A scroll hook calculates the user's progress <code>(0.0 to 1.0)</code> and maps it to the exact frame index: <code>Math.floor(progress * totalFrames)</code>.</li>
+    <li><strong>Lenis Smooth Scroll:</strong> Lenis normalizes wheel deltas across macOS, Windows, and mobile, eliminating stutter during fast scroll scrubbing.</li>
+  </ul>
+
+  <div class="footer">
+    UI Design Master Guide &bull; Generated for <strong>ui-own</strong> &bull; https://github.com/arulsj888-debug/ui-own.git
+  </div>
+
+</div>
+</body>
+</html>

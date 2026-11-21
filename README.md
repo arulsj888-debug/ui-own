@@ -2,6 +2,8 @@
 
 This repository contains modern, high-performance UI designs and creative frontend prototypes built with React, Vite, and Tailwind CSS.
 
+> 📄 **Complete PDF Guide:** See [UI_Design_Master_Guide_and_Resources.pdf](UI_Design_Master_Guide_and_Resources.pdf) for complete run instructions, creative component libraries (Aceternity UI, Magic UI, Codrops), AI prompt-to-code tools (v0, Bolt, Lovable), and ready-to-copy prompts.
+
 ---
 
 ## Included Projects
